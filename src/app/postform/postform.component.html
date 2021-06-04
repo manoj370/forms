@@ -1,0 +1,83 @@
+<div class="container" style="padding:18%">
+  <div class="panel panel-primary">
+    <div class="panel-heading"><h4 i18n="@@signup">Reactive Form</h4></div>
+    <div class="panel-body"> 
+    
+<form [formGroup]="form">
+<div class="form-group">
+<label ><b>Id <span class="red">*</span></b></label>
+<input type="number" placeholder="Enter Id"  class="form-control" formControlName="id"
+[ngClass]="{ 'is-invalid':  submitted && f.id.errors }">
+<div *ngIf=" submitted && f.id.errors" class="invalid-feedback">
+  <div *ngIf=" submitted && f.id.errors.required" class="red">
+      Id Required
+  </div>
+  <div *ngIf=" submitted && f.id.errors.pattern" class="red">
+    Invalid Id
+</div>
+</div>
+</div>
+
+<div class="form-row">
+<div class="form-group col-md-6" style="padding-left:0%">
+  <label><b>Name</b></label>
+  <input type="text" placeholder="Name" name="firstname" class="form-control" formControlName="Name" [ngClass]="{ 'is-invalid':  submitted && f.Name.errors }">
+  <div *ngIf=" submitted && f.Name.errors" class="invalid-feedback">
+    <div *ngIf=" submitted && f.Name.errors.required" class="red">
+        Name Required
+    </div>
+    <div *ngIf=" submitted && f.Name.errors.pattern" class="red">
+      Invalid   Name
+  </div>
+  </div>
+</div>
+<div class="form-group col-md-6" style="padding-right:0%"> 
+<label ><b>UserName</b></label>
+<input type="text" placeholder="UserName" name="lastname" class="form-control" formControlName="userName" [ngClass]="{ 'is-invalid':  submitted && f.userName.errors }">
+<div *ngIf=" submitted && f.userName.errors" class="invalid-feedback">
+  <div *ngIf=" submitted && f.userName.errors.required" class="red">
+      User Name Required
+  </div>
+  <div *ngIf=" submitted && f.userName.errors.pattern" class="red">
+    Invalid  User Name
+</div>
+</div>
+</div>
+</div>
+<div class="form-row">
+<div class="formgroup col-md-6" style="padding-left:0%">
+<label><b>Email</b></label>
+<input type="email" placeholder="Email"  class="form-control" formControlName="email" [ngClass]="{ 'is-invalid':  submitted && f.email.errors }">
+<div *ngIf=" submitted && f.email.errors" class="invalid-feedback">
+  <div *ngIf=" submitted && f.email.errors.required" class="red">
+      Email Required
+  </div>
+  <div *ngIf=" submitted && f.email.errors.pattern" class="red">
+    Invalid  Email 
+</div>
+</div>
+</div>
+<div class="formgroup col-md-6" style="padding-right:0%">
+  <label><b>Phone</b></label>
+  <input type="text" placeholder="Phone"  class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid':  submitted && f.phone.errors }">
+  <div *ngIf=" submitted && f.phone.errors" class="invalid-feedback">
+    <div *ngIf=" submitted && f.phone.errors.required" class="red">
+        Phone Required
+    </div>
+    <div *ngIf=" submitted && f.phone.errors.pattern" class="red">
+      Invalid  Phone 
+  </div>
+  </div>
+  </div>
+</div>&nbsp;
+
+<div class="row">
+<div class="col-md-12 text-right">
+  <button type="submit" class="btn btn-primary"  (click)="submit()">Submit</button>
+</div>
+</div>
+
+</form>
+</div>
+</div>
+</div>
